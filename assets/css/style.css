@@ -1,0 +1,313 @@
+@font-face {
+  font-family: Sora;
+  font-display: fallback;
+  src: url("../fonts/Sora.ttf") format("truetype");
+}
+
+:root {
+  --clr-1: #F5C044;
+  --clr-2: #4CA154;
+  --clr-3: #18181B;
+  --clr-4: #52525A;
+  --clr-5: #D4D4D8;
+  --clr-6: #FAFAF9;
+  --clr-7: #FFFFFF;
+}
+
+*::before,
+*,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--clr-6);
+  color: var(--clr-4);
+  font-family: Sora, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  min-height: 100vh;
+}
+
+.content {
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1248px;
+  width: 90%;
+}
+
+main {
+  padding: clamp(4rem, 2rem + 6vh, 8rem) 0;
+}
+
+.circle {
+  background: var(--clr-1);
+  border-radius: 50%;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  width: 3rem;
+}
+
+.circle::after {
+  content: "⭐";
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero h1 {
+  animation-delay: 0.2s;
+  color: var(--clr-3);
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.hero p {
+  animation-delay: 0.4s;
+  font-size: 1.25rem;
+  line-height: 1.75;
+}
+
+.hero ul {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.hero ul li {
+  display: block;
+  font-size: 0.875rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.hero ul li:nth-of-type(1) {
+  animation-delay: 0.6s;
+}
+
+.hero ul li:nth-of-type(2) {
+  animation-delay: 0.8s;
+}
+
+.hero ul li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+
+.hero ul li + li {
+  margin-top: 0.5rem;
+}
+
+.hero ul li::before {
+  background: url("../images/done_ring_round_fill.svg") 0 center no-repeat;
+  content: "";
+  display: block;
+  height: 36px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+}
+
+.testimonials {
+  padding-top: 4rem;
+}
+
+.card {
+  background: var(--clr-7);
+  border-radius: 1rem;
+  box-shadow: 0px 24px 28px 32px rgba(212, 212, 216, 0.1);
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card + .card {
+  animation-delay: 0.2s;
+  margin-top: 3rem;
+}
+
+.card__header {
+  align-items: center;
+  display: flex;
+}
+
+.company {
+  height: 32px;
+  width: 90px;
+}
+
+.company__logo {
+  width: 100%;
+  height: auto;
+}
+
+.stars {
+  align-items: center;
+  display: flex;
+  margin-left: 1rem;
+}
+
+.star {
+  background: url("../images/star_fill_gray.svg") no-repeat center;
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.star--fill {
+  background-image: url("../images/star_fill.svg");
+}
+
+.card__body {
+  padding-top: 0.5rem;
+}
+
+.card__title {
+  color: var(--clr-3);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+footer {
+  font-size: 0.75rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: var(--clr-4);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--clr-2);
+}
+
+footer a:focus-visible {
+  outline: 3px solid var(--clr-2);
+}
+
+.fade-top {
+  animation: fade-top 0.4s cubic-bezier(.11,.81,.7,.17);
+}
+
+.fade-left {
+  animation: fade-left 0.4s cubic-bezier(.11,.81,.7,.17);
+}
+
+.fade-bottom {
+  animation: fade-bottom 0.4s cubic-bezier(.11,.81,.7,.17);
+}
+
+.fade-right {
+  animation: fade-right 0.4s cubic-bezier(.11,.81,.7,.17);
+}
+
+@keyframes fade-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: none;
+    transform: none;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+
+  100% {
+    opacity: none;
+    transform: none;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+
+  100% {
+    opacity: none;
+    transform: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .testimonials::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .card--left {
+    float: left;
+  }
+  
+  .card--right {
+    float: right;
+  }
+}
+
+@media (min-width: 780px) {
+  .content {
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  main {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15vh;
+  }
+
+  .hero {
+    margin: 0;
+    padding: 0;
+    width: 47%;
+  }
+
+  .testimonials {
+    margin: 0;
+    padding: 0;
+    width: 45%;
+  }
+
+  .card--left,
+  .card--right {
+    animation-name: fade-right !important;
+  }
+
+  footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
